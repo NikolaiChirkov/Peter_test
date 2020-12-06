@@ -1,0 +1,99 @@
+.history {
+    width: 100%;
+    height: auto;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 16px;
+    
+    box-shadow: 0px 0px 16px rgba(139, 164, 187, 0.12);
+    
+    background: #FFFFFF;
+}
+
+.history__title {
+    padding-left: 22px;
+}
+
+.history__item {
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-items: center;
+
+    width: auto;
+
+    padding: 30px 22px;
+}
+
+.item__cover {
+    width: 44px;
+    height: 44px;
+}
+
+.item__container {
+    display: flex;
+    flex-flow: row;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
+
+    padding-left: 10px;
+}
+
+.item__info {
+    display: flex;
+    flex-flow: column nowrap;
+
+    align-items: flex-start;
+}
+
+.item__info-title {
+    margin: 0;
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+}
+
+.item__info-date {
+    margin: 0;
+
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 19px;
+    letter-spacing: 0.006em;
+
+    color: #8C9AAE;
+}
+
+.item__payment {
+    display: flex;
+    flex-flow: column nowrap;
+
+    align-items: flex-end;
+}
+
+.item__payment-valute {
+    margin: 0;
+
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 0.0145455em;
+
+    color: #8C9AAE;
+}
+
+.item__payment-dollar {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.0145455em;
+
+    color: #8C9AAE;
+}
