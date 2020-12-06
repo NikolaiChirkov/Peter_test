@@ -2,9 +2,15 @@
   width: 100%;
   height: 100vh;
 
-  background-color: #F1F3F9;
-
   text-transform: capitalize;
+  
+  font-weight: 500;
+
+  background-color: #F1F3F9;
+}
+
+.container {
+  padding: 24px 16px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

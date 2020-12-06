@@ -1,6 +1,5 @@
 .header {
     display: flex;
-
     justify-content: center;
 
     align-items: center;
@@ -9,13 +8,9 @@
     height: 60px;
 
     background-color: #FFFFFF;
-
-    
 }
 
 .header__text {
     font-size: 18px;
-    font-weight: 500;
-    
     line-height: 26px;
 }
