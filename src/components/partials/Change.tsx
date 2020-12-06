@@ -7,7 +7,7 @@ const Change = () => {
         <section className="change">
             <h1 className="change__title">change currency</h1>
             <div className="change__buttons">
-                <button className="button chosen">
+                <button className="button chosen-valute">
                     <h1 className="button__sign">£</h1>
                     <p className="button__acronym">gbp</p>
                 </button>
