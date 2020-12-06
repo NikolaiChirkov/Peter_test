@@ -1,7 +1,8 @@
 import React from 'react';
-import '../assets/styles/App.css';
 import Header from './partials/Header';
 import Card from './partials/Card';
+import Change from './partials/Change';
+import '../assets/styles/App.css';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <div className="container">
         <Card />
+        <Change />
       </div>
     </div>
   );
