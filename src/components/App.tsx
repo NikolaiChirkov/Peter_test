@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './partials/Header';
 import Card from './partials/Card';
 import Change from './partials/Change';
+import History from './partials/History';
+// import CardChange from './partials/CardChange';
 import '../assets/styles/App.css';
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
       <div className="container">
         <Card />
         <Change />
+        <History />
+        {/* <CardChange /> */}
       </div>
     </div>
   );
