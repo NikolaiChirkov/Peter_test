@@ -86,6 +86,10 @@ const DataProvider: any = ({ children }: any) => {
 
         return itemAmount
     }
+
+    const ID = () => {
+        return Math.random().toString(36).substr(2, 9);
+    }
     
     useEffect(() => {
       fetchUsers();
@@ -105,7 +109,8 @@ const DataProvider: any = ({ children }: any) => {
             setCurrentUser,
             setLoading,
             changeBalance,
-            changeHistoryItemAmount
+            changeHistoryItemAmount,
+            ID
         }}>
             {children}
         </DataContext.Provider>

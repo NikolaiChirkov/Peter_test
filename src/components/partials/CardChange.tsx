@@ -12,6 +12,7 @@ const CardChange: React.FC = () => {
         currentUser,
         setChangeCard, 
         setCurrentUser, 
+        ID 
     } = useDataContext();
 
     return (
@@ -26,7 +27,7 @@ const CardChange: React.FC = () => {
                 {users && users.map((item: UserType, index: number) => {
                     return (
                         <li 
-                            key={new Date().getDate().toString()} 
+                            key={ID()} 
                             className="list__item" 
                             onClick={() => {
                                 setCurrentUser(index);
