@@ -8,7 +8,8 @@ const History: React.FC = () => {
         users, 
         currentUser, 
         currentValute, 
-        changeHistoryItemAmount 
+        changeHistoryItemAmount,
+        ID 
     } = useDataContext();
     const transaction = users[currentUser].transaction;
 
@@ -18,7 +19,7 @@ const History: React.FC = () => {
             <div className="history__list">
                 {transaction.map((item: HistoryItemType) => {
                     return (
-                        <div key={Math.random()} className="history__item">
+                        <div key={ID()} className="history__item">
                             <div  className="item">
                                 <img className="item__cover" src={`${item.icon_url}`} alt=""/>
                                 <div className="item__container">

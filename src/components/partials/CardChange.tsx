@@ -6,7 +6,13 @@ import '../../assets/styles/partials/CardChange.css';
 import { UserType } from '../interfaces/Interfaces';
 
 const CardChange: React.FC = () => {
-    const { users, changeCard, setChangeCard, setCurrentUser } = useDataContext();
+    const { 
+        users, 
+        changeCard, 
+        setChangeCard, 
+        setCurrentUser, 
+        ID 
+    } = useDataContext();
 
     return (
         <section className={`${changeCard ? "card-change" : "card-change hidden"}`}>
@@ -20,7 +26,7 @@ const CardChange: React.FC = () => {
                 {users && users.map((item: UserType, index: number) => {
                     return (
                         <li 
-                            key={new Date().getDate().toString()} 
+                            key={ID()} 
                             className="list__item" 
                             onClick={() => {
                                 setCurrentUser(index);
