@@ -9,6 +9,7 @@ const CardChange: React.FC = () => {
     const { 
         users, 
         changeCard, 
+        currentUser,
         setChangeCard, 
         setCurrentUser, 
         ID 
@@ -33,8 +34,11 @@ const CardChange: React.FC = () => {
                                 setChangeCard(false);
                             }}
                         >
-                            <img src={MasterCard} alt="" />
-                            <p className="list__item-text">{item.cardNumber}</p>
+                            <div className="list__item-container">
+                                <img src={MasterCard} alt="" />
+                                <p className="list__item-container-text">{item.cardNumber}</p>
+                            </div>
+                            {currentUser === index && <div className="list__item-chosen"></div>}
                         </li>
                     );
                 })}  
