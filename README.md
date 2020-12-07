@@ -2,7 +2,9 @@ Idk why, but HR gave me only Android model to create web-site layout. OK, I've d
 
 Check only with screen width equals to 360px. In other cases, I don't take responsibility for your melting eyes. 
 
-Also, after starting server disable "strict" option in tsconfig, or tsc will curse you.
+Also, after starting server change "jsx" option to "react" in tsconfig, or tsc will curse you. 
+
+I'll never use create-react-app again.
 
 Created with this model:
 

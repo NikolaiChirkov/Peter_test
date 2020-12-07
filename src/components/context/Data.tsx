@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { UserType, DataContextType } from '../interfaces/Interfaces';
+import { UserRawType, DataContextType } from '../interfaces/Interfaces';
 
-const DataProvider: React.FC = ({ children }) => {
+const DataProvider: any = ({ children }: any) => {
     const [users, setUsers] = useState<Array<Object>>([]);
     const [currentUser, setCurrentUser] = useState<number>(0);
     const [valute, setValute] = useState<Array<number>>([]);
@@ -17,7 +17,7 @@ const DataProvider: React.FC = ({ children }) => {
             const { users } = await response.json();
   
             if (users) {
-                const newUsers = users.map((user: UserType) => {
+                const newUsers = users.map((user: UserRawType) => {
                     const {
                         card_number,
                         type,

@@ -5,7 +5,7 @@ interface ITransaction {
     amoutn: string;
 }
 
-export type UserType = {
+export type UserRawType = {
     card_number: number;
     type: string;
     cardholder_name: string;
@@ -14,20 +14,33 @@ export type UserType = {
     transaction_history: ITransaction[];
 }
 
-export type DataContextType = {
-    DataProvider: React.FC<{}>
+export type UserType = {
+    cardNumber: number;
+    type: string;
+    cardholder: string;
+    valid: string;
+    balance: number;
+    transaction: ITransaction[];
 }
 
+export type HistoryItemType = {
+    icon_url: string;
+    title: string;
+    date: string;
+    amount: number;
+}
 
-//     users: Object[];
-//     valute: Number[];
-//     loading: boolean;
-//     currentUser: number;
-//     currentValute: number;
-//     changeCard: boolean;
-//     setChangeCard: any;
-//     setCurrentValute: any;
-//     setCurrentUser: any;
-//     setLoading: any;
-//     changeBalance: any;
-//     changeHistoryItemAmount: any ;
+export type DataContextType = {
+    users: Object[];
+    valute: Number[];
+    loading: boolean;
+    currentUser: number;
+    currentValute: number;
+    changeCard: boolean;
+    setChangeCard: any;
+    setCurrentValute: any;
+    setCurrentUser: any;
+    setLoading: any;
+    changeBalance: any;
+    changeHistoryItemAmount: any ;
+}
