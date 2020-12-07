@@ -14,6 +14,13 @@
     padding-left: 22px;
 }
 
+.history__list {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: auto;
+}
+
 .history__item {
     display: flex;
     flex-flow: row nowrap;
@@ -23,6 +30,12 @@
     width: auto;
 
     padding: 30px 22px;
+}
+
+.item {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
 }
 
 .item__cover {
