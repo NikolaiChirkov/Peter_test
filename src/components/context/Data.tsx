@@ -1,13 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { IUser } from '../interfaces/Interfaces';
 
 const DataContext = React.createContext(null);
 
-const DataProvider = ({ children }) => {
+const DataProvider: React.FC = ({ children }) => {
     const [users, setUsers] = useState([]);
     const [currentUser, setCurrentUser] = useState(0);
-    const [valute, setValute] = useState({});
-    const [currentValute, setCurrentValute] = useState('GBP');
+    const [valute, setValute] = useState([]);
+    const [currentValute, setCurrentValute] = useState(0);
     const [loading, setLoading] = useState(true);
+    const [openChangeCard, setOpenChangeCard] = useState(false);
   
     const fetchUsers = async() => {
         setLoading(true);
@@ -54,16 +56,37 @@ const DataProvider = ({ children }) => {
             const { Valute } = await response.json();
 
             if (Valute) {
-                const { GBP, USD, EUR } = Valute;
-                const newValute = { gbp: GBP, usd: USD, eur: EUR };
+                const { GBP, EUR, USD } = Valute;
+                const newValute = [
+                        parseFloat(GBP.Value.toFixed(2)), 
+                        parseFloat(EUR.Value.toFixed(2)), 
+                        1, 
+                        parseFloat(USD.Value.toFixed(2))
+                    ];
                 setValute(newValute);
             } else {
-                setValute({});
+                setValute([]);
             }
         } catch(error) {
             console.error(error);
         }
         setLoading(false);
+    }
+
+    const changeBalance = (balance) => {
+        const changeValute = valute[currentValute];
+        const dollar = valute[3];
+        const amount = parseFloat((balance * (dollar/changeValute)).toFixed(2));
+        
+        return(amount);
+    }
+
+    const changeHistoryItemAmount = (amount) => {
+        const changeValute = valute[currentValute];
+        const dollar = valute[3];
+        const itemAmount = parseFloat((amount * (dollar/changeValute)).toFixed(2));
+
+        return itemAmount
     }
     
     useEffect(() => {
@@ -71,16 +94,20 @@ const DataProvider = ({ children }) => {
       fetchValute();
     }, []);
 
-    console.log(users);
-    console.log(valute);
-
     return (
         <DataContext.Provider value={{
             users,
             valute,
             loading,
             currentUser,
-            setLoading
+            currentValute,
+            openChangeCard,
+            setOpenChangeCard,
+            setCurrentValute,
+            setCurrentUser,
+            setLoading,
+            changeBalance,
+            changeHistoryItemAmount
         }}>
             {children}
         </DataContext.Provider>
