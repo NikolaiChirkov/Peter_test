@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../assets/styles/partials/History.css';
 import { useDataContext } from '../context/Data';
+import { HistoryItemType } from '../interfaces/Interfaces';
 
 const History: React.FC = () => {
     const { 
@@ -15,7 +16,7 @@ const History: React.FC = () => {
         <section className="history">
             <h1 className="history__title">History</h1>
             <div className="history__list">
-                {transaction.map(item => {
+                {transaction.map((item: HistoryItemType) => {
                     return (
                         <div key={Math.random()} className="history__item">
                             <div  className="item">
