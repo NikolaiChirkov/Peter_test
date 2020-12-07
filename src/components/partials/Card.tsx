@@ -10,12 +10,13 @@ const Card: React.FC = () => {
         users, 
         currentUser, 
         currentValute, 
-        changeBalance 
+        changeBalance ,
+        setChangeCard
     } = useDataContext();
     const user = users[currentUser];
 
     return (
-        <section className="card" >
+        <section className="card" onClick={() => setChangeCard(true)}>
             <div className="number">
                 <img src={masterCardLogo} alt='' />
                 <p className="number__value">{user.cardNumber}</p>

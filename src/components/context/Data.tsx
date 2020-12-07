@@ -9,7 +9,7 @@ const DataProvider: React.FC = ({ children }) => {
     const [valute, setValute] = useState([]);
     const [currentValute, setCurrentValute] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [openChangeCard, setOpenChangeCard] = useState(false);
+    const [changeCard, setChangeCard] = useState(false);
   
     const fetchUsers = async() => {
         setLoading(true);
@@ -101,8 +101,8 @@ const DataProvider: React.FC = ({ children }) => {
             loading,
             currentUser,
             currentValute,
-            openChangeCard,
-            setOpenChangeCard,
+            changeCard,
+            setChangeCard,
             setCurrentValute,
             setCurrentUser,
             setLoading,

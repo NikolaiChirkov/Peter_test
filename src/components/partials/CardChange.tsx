@@ -5,12 +5,12 @@ import { useDataContext } from '../context/Data';
 import '../../assets/styles/partials/CardChange.css';
 
 const CardChange: React.FC = () => {
-    const { users } = useDataContext();
+    const { users, changeCard, setChangeCard } = useDataContext();
 
     return (
-        <section className="card-change hidden">
+        <section className={`${changeCard ? "card-change" : "card-change hidden"}`}>
             <header className="card-change__header">
-                <button className="card-change__header-btn">
+                <button className="card-change__header-btn" onClick={() => setChangeCard(false)}>
                     <img src={ArrowLeft} alt="" />
                 </button>
                 <h1 className="card-change__header-title">Мои карты</h1>
