@@ -1,6 +1,3 @@
-import React from 'react';
-import { Interface } from 'readline';
-
 interface ITransaction {
     title: string;
     icon_url: string;
@@ -8,13 +5,29 @@ interface ITransaction {
     amoutn: string;
 }
 
-type IUser = {
-    cardNumber: number;
+export type UserType = {
+    card_number: number;
     type: string;
-    cardholder: string;
+    cardholder_name: string;
     valid: string;
     balance: number;
-    transaction: ITransaction[];
+    transaction_history: ITransaction[];
 }
 
-export { IUser }; 
+export type DataContextType = {
+    DataProvider: React.FC<{}>
+}
+
+
+//     users: Object[];
+//     valute: Number[];
+//     loading: boolean;
+//     currentUser: number;
+//     currentValute: number;
+//     changeCard: boolean;
+//     setChangeCard: any;
+//     setCurrentValute: any;
+//     setCurrentUser: any;
+//     setLoading: any;
+//     changeBalance: any;
+//     changeHistoryItemAmount: any ;

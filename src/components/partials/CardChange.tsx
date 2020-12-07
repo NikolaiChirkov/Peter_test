@@ -16,7 +16,7 @@ const CardChange: React.FC = () => {
                 <h1 className="card-change__header-title">Мои карты</h1>
             </header>
             <ul className="card-change__list">
-                {users && users.map((item, index) => {
+                {users && users.map((item: Object, index: number) => {
                     return (
                         <li 
                             key={new Date().getDate().toString()} 

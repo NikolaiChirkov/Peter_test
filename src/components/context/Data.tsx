@@ -1,15 +1,13 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { IUser } from '../interfaces/Interfaces';
-
-const DataContext = React.createContext(null);
+import { UserType, DataContextType } from '../interfaces/Interfaces';
 
 const DataProvider: React.FC = ({ children }) => {
-    const [users, setUsers] = useState([]);
-    const [currentUser, setCurrentUser] = useState(0);
-    const [valute, setValute] = useState([]);
-    const [currentValute, setCurrentValute] = useState(0);
-    const [loading, setLoading] = useState(true);
-    const [changeCard, setChangeCard] = useState(false);
+    const [users, setUsers] = useState<Array<Object>>([]);
+    const [currentUser, setCurrentUser] = useState<number>(0);
+    const [valute, setValute] = useState<Array<number>>([]);
+    const [currentValute, setCurrentValute] = useState<number>(0);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [changeCard, setChangeCard] = useState<boolean>(false);
   
     const fetchUsers = async() => {
         setLoading(true);
@@ -19,7 +17,7 @@ const DataProvider: React.FC = ({ children }) => {
             const { users } = await response.json();
   
             if (users) {
-                const newUsers = users.map(user => {
+                const newUsers = users.map((user: UserType) => {
                     const {
                         card_number,
                         type,
@@ -73,7 +71,7 @@ const DataProvider: React.FC = ({ children }) => {
         setLoading(false);
     }
 
-    const changeBalance = (balance) => {
+    const changeBalance = (balance: number) => {
         const changeValute = valute[currentValute];
         const dollar = valute[3];
         const amount = parseFloat((balance * (dollar/changeValute)).toFixed(2));
@@ -81,7 +79,7 @@ const DataProvider: React.FC = ({ children }) => {
         return(amount);
     }
 
-    const changeHistoryItemAmount = (amount) => {
+    const changeHistoryItemAmount = (amount: number) => {
         const changeValute = valute[currentValute];
         const dollar = valute[3];
         const itemAmount = parseFloat((amount * (dollar/changeValute)).toFixed(2));
@@ -113,6 +111,8 @@ const DataProvider: React.FC = ({ children }) => {
         </DataContext.Provider>
     )
 }
+
+const DataContext = React.createContext(DataProvider);
 
 export const useDataContext = () => {
     return useContext(DataContext);
