@@ -5,7 +5,7 @@ import { useDataContext } from '../context/Data';
 import '../../assets/styles/partials/CardChange.css';
 
 const CardChange: React.FC = () => {
-    const { users, changeCard, setChangeCard } = useDataContext();
+    const { users, changeCard, setChangeCard, setCurrentUser } = useDataContext();
 
     return (
         <section className={`${changeCard ? "card-change" : "card-change hidden"}`}>
@@ -16,9 +16,16 @@ const CardChange: React.FC = () => {
                 <h1 className="card-change__header-title">Мои карты</h1>
             </header>
             <ul className="card-change__list">
-                {users && users.map((item) => {
+                {users && users.map((item, index) => {
                     return (
-                        <li key={new Date().getDate().toString()} className="list__item">
+                        <li 
+                            key={new Date().getDate().toString()} 
+                            className="list__item" 
+                            onClick={() => {
+                                setCurrentUser(index);
+                                setChangeCard(false);
+                            }}
+                        >
                             <img src={MasterCard} alt="" />
                             <p className="list__item-text">{item.cardNumber}</p>
                         </li>
