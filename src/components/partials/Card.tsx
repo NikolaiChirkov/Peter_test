@@ -2,11 +2,16 @@ import React from 'react';
 import masterCardLogo from '../../assets/svg/mastercard.svg';
 import userLogo from '../../assets/svg/user.svg';
 import '../../assets/styles/partials/Card.css';
-import { useDataContext } from '../functional/Data';
+import { useDataContext } from '../context/Data';
 
 
-const Card = () => {
-    const { users, currentUser } = useDataContext();
+const Card: React.FC = () => {
+    const { 
+        users, 
+        currentUser, 
+        currentValute, 
+        changeBalance 
+    } = useDataContext();
     const user = users[currentUser];
 
     return (
@@ -26,7 +31,9 @@ const Card = () => {
                 </div>
             </div>
             <div className="balance">
-                <p className="balance__valute">£2 125,12</p>
+                <p className="balance__valute">
+                    {`${currentValute === 0 ? "£" : currentValute === 1 ? "€" : "₽"} ${changeBalance(user.balance)}`}
+                </p>
                 <div className="balance__dollar">
                     <p className="balance__dollar-text">your balance</p>
                     <p className="balance__dollar-value">${user.balance}</p>

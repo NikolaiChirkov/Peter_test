@@ -6,10 +6,10 @@ import History from './partials/History';
 import CardChange from './partials/CardChange';
 import Loading from '../assets/svg/loading.svg';
 import '../assets/styles/App.css';
-import { useDataContext } from './functional/Data';
+import { useDataContext } from './context/Data';
 
-function App() {
-  const { loading, users } = useDataContext();
+const App: React.FC = () => {
+  const { loading } = useDataContext();
 
   if (loading) {
     return <section className="loading">
