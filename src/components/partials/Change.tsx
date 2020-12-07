@@ -1,5 +1,7 @@
 import React from 'react';
+import { useDataContext } from '../functional/Data';
 import '../../assets/styles/partials/Change.css';
+
 
 const Change = () => {
 
@@ -7,7 +9,7 @@ const Change = () => {
         <section className="change">
             <h1 className="change__title">change currency</h1>
             <div className="change__buttons">
-                <button className="button chosen-valute">
+                <button className="button chosen-volute">
                     <h1 className="button__sign">£</h1>
                     <p className="button__acronym">gbp</p>
                 </button>
