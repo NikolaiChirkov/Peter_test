@@ -6,7 +6,13 @@ import '../../assets/styles/partials/CardChange.css';
 import { UserType } from '../interfaces/Interfaces';
 
 const CardChange: React.FC = () => {
-    const { users, changeCard, setChangeCard, setCurrentUser } = useDataContext();
+    const { 
+        users, 
+        changeCard, 
+        currentUser,
+        setChangeCard, 
+        setCurrentUser, 
+    } = useDataContext();
 
     return (
         <section className={`${changeCard ? "card-change" : "card-change hidden"}`}>
@@ -27,8 +33,11 @@ const CardChange: React.FC = () => {
                                 setChangeCard(false);
                             }}
                         >
-                            <img src={MasterCard} alt="" />
-                            <p className="list__item-text">{item.cardNumber}</p>
+                            <div className="list__item-container">
+                                <img src={MasterCard} alt="" />
+                                <p className="list__item-container-text">{item.cardNumber}</p>
+                            </div>
+                            {currentUser === index && <div className="list__item-chosen"></div>}
                         </li>
                     );
                 })}  
