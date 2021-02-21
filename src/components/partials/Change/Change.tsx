@@ -1,9 +1,8 @@
-import React from 'react';
-import { useDataContext } from '../context/Data';
-import '../../assets/styles/partials/Change.css';
+import { useDataContext } from '../../context/Data';
+import '../../../assets/styles/partials/Change.css';
 
 
-const Change: React.FC = () => {
+const Change = () => {
     const { currentValute, setCurrentValute } = useDataContext();
 
     return (

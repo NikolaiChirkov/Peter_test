@@ -1,30 +1,29 @@
 import React from 'react';
 import Header from './partials/Header';
-import Card from './partials/Card';
-import Change from './partials/Change';
-import History from './partials/History';
-import CardChange from './partials/CardChange';
-import Loading from '../assets/svg/loading.svg';
+import Card from './partials/Card/Card';
+import Change from './partials/Change/Change';
+import History from './partials/History/History';
+import CardChange from './partials/CardChange/CardChange';
+import LoadingComponent from './partials/LoadingComponent';
 import '../assets/styles/App.css';
 import { useDataContext } from './context/Data';
 
-const App: React.FC = () => {
+const App = () => {
   const { loading } = useDataContext();
 
   if (loading) {
-    return <section className="loading">
-      <img className="loading-img" src={Loading} alt="" />
-      <h1>Загрузка...</h1>
-    </section>
+    return (
+      <LoadingComponent />
+    )
   }
  
   return (
     <div className="app">
       <Header />
       <div className="container">
-        <Card />
+        {/* <Card /> */}
         <Change />
-        <History />
+        {/* <History /> */}
       </div>
       <CardChange />
     </div>

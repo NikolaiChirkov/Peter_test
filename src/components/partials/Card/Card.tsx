@@ -1,11 +1,10 @@
-import React from 'react';
-import masterCardLogo from '../../assets/svg/mastercard.svg';
-import userLogo from '../../assets/svg/user.svg';
-import '../../assets/styles/partials/Card.css';
-import { useDataContext } from '../context/Data';
+import { useDataContext } from '../../context/Data';
+import masterCardLogo from '../../../assets/svg/mastercard.svg';
+import userLogo from '../../../assets/svg/user.svg';
+import '../../../assets/styles/partials/Card.css';
 
 
-const Card: React.FC = () => {
+const Card = () => {
     const { 
         users, 
         currentUser, 

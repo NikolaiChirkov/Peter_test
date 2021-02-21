@@ -1,9 +1,8 @@
-import React from 'react';
-import '../../assets/styles/partials/History.css';
-import { useDataContext } from '../context/Data';
-import { HistoryItemType } from '../interfaces/Interfaces';
+import { useDataContext } from '../../context/Data';
+import { HistoryItemType } from '../../interfaces/Interfaces';
+import '../../../assets/styles/partials/History.css';
 
-const History: React.FC = () => {
+const History = () => {
     const { 
         users, 
         currentUser, 

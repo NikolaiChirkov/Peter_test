@@ -1,11 +1,10 @@
-import React from 'react';
-import ArrowLeft from '../../assets/svg/arrow-left.svg';
-import MasterCard from '../../assets/svg/mastercard.svg';
-import { useDataContext } from '../context/Data';
-import '../../assets/styles/partials/CardChange.css';
-import { UserType } from '../interfaces/Interfaces';
+import { useDataContext } from '../../context/Data';
+import { UserType } from '../../interfaces/Interfaces';
+import ArrowLeft from '../../../assets/svg/arrow-left.svg';
+import MasterCard from '../../../assets/svg/mastercard.svg';
+import '../../../assets/styles/partials/CardChange.css';
 
-const CardChange: React.FC = () => {
+const CardChange = () => {
     const { 
         users, 
         changeCard, 
