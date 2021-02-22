@@ -32,3 +32,11 @@ Idk why, but HR gave me only Android model to create website layout. OK, I've do
 Check only with screen width equals to 360px. In other cases, I don't take responsibility for your melting eyes. 
 
 Also, after starting server change "jsx" option to "react" in tsconfig, or tsc will curse you. 
+
+### Update comment 22/02/2021
+
+I can't believe in that.
+
+The story: I wanted to refactor & improve peter-test project. When I start to work I mentioned one thing: the data from peter partner's link isn't parse. "Okay, that may be code mistake" - I thought. But no: someone just fucked up SSL sertificate on peter partner's site. And all protection protocols started to break connection with 'unprotected' site. Real foobar situation.
+
+I glad I hadn't pass through interview in that company.
